@@ -10,7 +10,7 @@
 > The project folder structures is splited using folder-by-structure method.
 
 **1. App**
-This folder contains all the features in the application. Each child folder of this directory is a distinct feature with [common directory](./lib/app/common/) is universial that can be shared by the others.
+This folder contains all the features in the application. Each child folder of this directory is a distinct feature with [common directory](./lib/app/common) is universial that can be shared by the others.
 
 **2. Base**
 This directory contains all the base classes with essential functionality that could be implemented during developing process.
@@ -80,7 +80,7 @@ This template follow the **Test Driven Development** process and **MVP architect
 ### Dealing with API / Data handler
 > Usually, while using Provider, we often faces with the situation when need to navigating before/after an api is executed (etc: show loading, show dialog...). By default, provider package only support UI reload when state changes, NOT navigating when a new state is exposed (similar to BlocListener). Hence using `apiCallSafety` will avoid this issue.
 
-1. Wrap the api calling function from UI with `apiCallSafety` method (inside [ApiError](./lib/services/rest_api/api/api_error.dart) mixin)
+1. Wrap the api calling function from UI with `apiCallSafety` method (inside [ApiError](lib/services/remote/api/api_error.dart) mixin)
 2. Handling call flow by submitting the implementation to these callbacks:
     1. `Future<void> Function()? onStart`
         Called before executing API.
@@ -140,4 +140,4 @@ To add named route to the application, modify the `rooutes.dart` file inside the
 
 ### Base API response model.
 
-The application RestAPI service depends on the return Base model defined. You can override this model by modifying [base_response.dart](./lib/services/rest_api/models/base_response.dart). Also server error will also be parsed to [model](./lib/services/rest_api/models/base_error.dart).
+The application RestAPI service depends on the return Base model defined. You can override this model by modifying [base_response.dart](lib/services/remote/models/base_response.dart). Also server error will also be parsed to [model](lib/services/remote/models/base_error.dart).

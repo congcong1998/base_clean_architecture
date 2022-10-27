@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:tfc/base/presentation/pages/page_stateful_actions.dart';
 import 'package:tfc/services/dialogs/app_loading.dart';
-import 'package:tfc/services/rest_api/api/api_error.dart';
+import 'package:tfc/services/remote/api/api_error.dart';
 
 abstract class PageStateful<T extends StatefulWidget, P extends ChangeNotifier>
     extends State<T>
